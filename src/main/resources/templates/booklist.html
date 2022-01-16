@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Document</title>
+	</head>
+	
+	<body>
+	    <h1>Books</h1>
+		
+		<table>
+		
+		  <tr>
+		    <th>Title</th>
+		    <th>Author</th>
+		    <th>ISBN</th>
+		    <th>Year</th>
+		  </tr>
+		  
+		  <tr th:each="book : ${books}">
+		  	<td th:text="${book.title}"></td>
+		    <td th:text="${book.author}"></td>
+		    <td th:text="${book.isbn}"></td>
+		    <td th:text="${book.year}"></td>
+		  </tr>
+		  
+		</table>
+		
+		
+		<!--
+		<h2>Add new book</h2>
+    	    <form 
+	    	    action="#"
+	    	    th:object="${friend}"
+	    	    modelAttribute="friend"
+	    	    th:action="@{/index}"
+	    	    method="post">
+	    	    
+				<input type="text" th:field="*{name}" />
+			    <input type="submit" value="Submit" />
+			</form>
+	    	-->
+	</body>
+	
+</html>
