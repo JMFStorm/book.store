@@ -17,7 +17,7 @@ public class Application
 	CommandLineRunner commandLineRunner (BookRepository repository)
 	{
 		return (args) -> {
-			repository.deleteAll();
+			// repository.deleteAll();
 			repository.save(new Book("Jannen kirja", "Janne", "123232-12", 2020, 99.95d));
 			repository.save(new Book("Koodarin opas", "Anniina", "334455-12", 2022, 19.95d));
 			repository.save(new Book("Jannen kirja 2", "Janne", "143423-92", 2020, 199.95d));
