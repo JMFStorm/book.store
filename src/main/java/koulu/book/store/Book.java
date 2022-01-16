@@ -12,6 +12,10 @@ public class Book
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long id;
+	public Long getId()
+	{
+		return id;
+	}
 	
 	@Column
 	public String title;

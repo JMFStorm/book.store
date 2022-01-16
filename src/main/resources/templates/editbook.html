@@ -11,9 +11,9 @@
 	    <h1>Add book</h1>
 		
     	    <form 
-	    	    th:action="@{addbook}"
 	    	    th:object="${book}"
 	    	    modelAttribute="book"
+	    	    th:action="@{save/{id}(id=${book.id})}"
 	    	    action="@{save}"
 	    	    method="post">
 	    	    
