@@ -14,13 +14,20 @@ public class Application
 	}
 	
 	@Bean
-	CommandLineRunner commandLineRunner (BookRepository repository)
+	CommandLineRunner commandLineRunner (BookRepository books, CategoryRepository categories)
 	{
 		return (args) -> {
+			
+			Category c1 = new Category("Fantasy");
+			Category c2 = new Category("Not Fantasy");
+			
 			// repository.deleteAll();
-			repository.save(new Book("Jannen kirja", "Janne", "123232-12", 2020, 99.95d));
-			repository.save(new Book("Koodarin opas", "Anniina", "334455-12", 2022, 19.95d));
-			repository.save(new Book("Jannen kirja 2", "Janne", "143423-92", 2020, 199.95d));
+			categories.save(c1);
+			categories.save(c2);
+			
+			books.save(new Book("Jannen kirja", "Janne", "123232-12", 2020, 99.95d, c1));
+			books.save(new Book("Koodarin opas", "Anniina", "334455-12", 2022, 19.95d, c1));
+			books.save(new Book("Jannen kirja 2", "Janne", "143423-92", 2020, 199.95d, c1));
 		};
 	}
 }
